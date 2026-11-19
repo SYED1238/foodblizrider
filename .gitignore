@@ -2,3 +2,4 @@ node_modules/
 .env*
 mcp_config.json
 .wrangler/
+logo-original.png
