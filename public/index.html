@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#FFFFFF">
+  <meta name="theme-color" content="#042F2E">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <title>Foodbliz Rider — Connect Restaurant</title>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Foodbliz Rider — Partner Portal</title>
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -15,19 +15,52 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <div class="app-shell">
-    <header class="app-header">
-      <div class="header-brand">
-        <img src="/icon-192.png" alt="FoodBliz Rider" class="header-logo" width="48" height="48">
-        <div class="brand-meta">
-          <span class="brand-name">FoodBliz</span>
-          <span class="brand-category">RIDER</span>
+  <div class="screen-canvas">
+    <!-- Top Branded Hero -->
+    <header class="hero-section">
+      <!-- Subtle Delivery Map SVG Background Pattern -->
+      <svg class="hero-map-bg" viewBox="0 0 460 320" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+        <path d="M-20 60 H480 M-20 130 H480 M-20 200 H480 M-20 270 H480" stroke="#10B981" stroke-opacity="0.08" stroke-width="1" />
+        <path d="M60 -20 V340 M140 -20 V340 M220 -20 V340 M300 -20 V340 M380 -20 V340" stroke="#10B981" stroke-opacity="0.08" stroke-width="1" />
+        <path d="M70 240 C120 180, 160 210, 230 140 S320 120, 380 70" stroke="#34D399" stroke-opacity="0.45" stroke-width="2.5" stroke-dasharray="6 6" />
+        <circle cx="70" cy="240" r="5" fill="#34D399" />
+        <circle cx="70" cy="240" r="9" stroke="#34D399" stroke-opacity="0.4" stroke-width="1.5" />
+        <circle cx="380" cy="70" r="6" fill="#F59E0B" />
+        <circle cx="380" cy="70" r="11" stroke="#F59E0B" stroke-opacity="0.35" stroke-width="1.5" />
+      </svg>
+
+      <!-- Top Row: Brand Label + Live Status Pill -->
+      <div class="hero-top-bar">
+        <span class="hero-brand-name">FoodBliz</span>
+        <div class="live-dispatch-badge">
+          <span class="live-dot" aria-hidden="true"></span>
+          <span>LIVE DISPATCH</span>
         </div>
       </div>
-      <span class="partner-badge">PARTNER APP</span>
+
+      <!-- Center Hero Focal Point -->
+      <div class="hero-center-content">
+        <div class="emblem-wrap">
+          <img src="/icon-192.png" alt="FoodBliz Rider" class="emblem-img" width="76" height="76">
+        </div>
+        <h1 class="hero-headline">Deliver fast.<br>Earn every trip.</h1>
+        <div class="feature-chips-row">
+          <span class="feature-chip">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            Instant Order Alerts
+          </span>
+          <span class="feature-chip">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+            Live GPS Routes
+          </span>
+        </div>
+      </div>
     </header>
 
-    <main class="app-content">
+    <!-- Curved White Bottom Sheet -->
+    <main class="bottom-sheet">
+      <div class="sheet-handle" aria-hidden="true"></div>
+
       <div id="saved-banner" class="saved-banner" hidden>
         <div class="saved-details">
           <span class="saved-tag">Connected Restaurant</span>
@@ -36,44 +69,46 @@
         <button type="button" id="btn-continue-saved" class="btn-secondary">Open</button>
       </div>
 
-      <div class="content-header">
-        <h1 class="page-title">Sign in to your restaurant</h1>
-        <p class="page-subtitle">Enter the partner code from your restaurant manager to connect to live delivery dispatch.</p>
+      <div class="sheet-intro">
+        <h2 class="sheet-title">Connect your restaurant</h2>
+        <p class="sheet-subtitle">Enter your partner code once to start receiving live deliveries.</p>
       </div>
 
-      <form id="restaurant-code-form" class="partner-form" novalidate>
-        <div class="form-group">
+      <form id="restaurant-code-form" class="sheet-form" novalidate>
+        <div class="field-container">
           <label for="restaurant-code-input" class="input-label">Restaurant Partner Code</label>
-          <input
-            id="restaurant-code-input"
-            name="code"
-            type="text"
-            inputmode="text"
-            autocomplete="off"
-            autocapitalize="characters"
-            spellcheck="false"
-            maxlength="24"
-            placeholder="ENTER CODE"
-            required
-          >
+          <div class="input-prefix-wrapper">
+            <svg class="input-leading-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <input
+              id="restaurant-code-input"
+              name="code"
+              type="text"
+              inputmode="text"
+              autocomplete="off"
+              autocapitalize="characters"
+              spellcheck="false"
+              maxlength="24"
+              placeholder="ENTER CODE"
+              required
+            >
+          </div>
           <p id="form-error" class="form-error" role="alert" hidden></p>
         </div>
 
-        <div class="info-note-box">
-          <svg class="info-note-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="12" y1="16" x2="12" y2="12"></line>
-            <line x1="12" y1="8" x2="12.01" y2="8"></line>
-          </svg>
-          <p class="info-note-text">You only need to enter this code once. Your device will stay connected to your restaurant automatically.</p>
-        </div>
-
-        <div class="bottom-action-area">
+        <div class="sheet-actions">
           <button type="submit" id="btn-connect" class="btn-primary">
-            <span id="btn-connect-text">Continue</span>
+            <span id="btn-connect-text">Continue to Dispatch</span>
+            <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
           </button>
+
           <button type="button" id="btn-reset-saved" class="btn-link" hidden>Clear saved restaurant</button>
-          <footer class="footer-meta">FoodBliz Partner Network • v1.0</footer>
+          <footer class="sheet-footer-note">One-time setup • Stays connected automatically</footer>
         </div>
       </form>
     </main>
