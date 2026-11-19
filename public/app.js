@@ -145,7 +145,7 @@ function initLauncher() {
     clearError();
     const cleaned = normalizeCode(rawCode);
     if (!cleaned) {
-      showError('Please enter your restaurant code (for example: SAVERA).');
+      showError('Please enter your restaurant code.');
       return;
     }
 

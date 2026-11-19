@@ -9,10 +9,10 @@ test('Foodbliz Rider Launcher verification suite', async (t) => {
   const appJs = fs.readFileSync(path.resolve('public/app.js'), 'utf8');
   const headersTxt = fs.readFileSync(path.resolve('public/_headers'), 'utf8');
 
-  await t.test('1. restaurants.json includes active SAVERA entry with valid HTTPS URL', () => {
-    assert.ok(restaurantsJson.SAVERA, 'SAVERA entry must exist');
-    assert.strictEqual(restaurantsJson.SAVERA.active, true);
-    assert.strictEqual(isValidHttpsBaseUrl(restaurantsJson.SAVERA.baseUrl), true);
+  await t.test('1. restaurants.json includes active SAVERAR22 entry with valid HTTPS URL', () => {
+    assert.ok(restaurantsJson.SAVERAR22, 'SAVERAR22 entry must exist');
+    assert.strictEqual(restaurantsJson.SAVERAR22.active, true);
+    assert.strictEqual(isValidHttpsBaseUrl(restaurantsJson.SAVERAR22.baseUrl), true);
   });
 
   await t.test('2. normalizeCode handles lowercase, whitespace, and punctuation safely', () => {
@@ -22,8 +22,8 @@ test('Foodbliz Rider Launcher verification suite', async (t) => {
   });
 
   await t.test('3. resolveRestaurant matches valid active entries and rejects inactive/HTTP entries', () => {
-    const match = resolveRestaurant(restaurantsJson, 'savera');
-    assert.strictEqual(match.code, 'SAVERA');
+    const match = resolveRestaurant(restaurantsJson, 'saverar22');
+    assert.strictEqual(match.code, 'SAVERAR22');
     assert.strictEqual(buildDeliveryUrl(match), 'https://saveraparadise.foodbliz.in/delivery');
 
     const badDir = {
