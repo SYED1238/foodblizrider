@@ -1,0 +1,8 @@
+{
+  "SAVERA": {
+    "name": "Savera Paradise",
+    "baseUrl": "https://saveraparadise.foodbliz.in",
+    "deliveryPath": "/delivery",
+    "active": true
+  }
+}

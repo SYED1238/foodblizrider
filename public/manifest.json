@@ -1,0 +1,12 @@
+{
+  "name": "Foodbliz Rider Partner",
+  "short_name": "Foodbliz Rider",
+  "id": "/foodbliz-rider-launcher",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#062E24",
+  "theme_color": "#059669",
+  "description": "Connect to your restaurant's live Foodbliz delivery dispatch portal."
+}

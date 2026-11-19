@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#059669">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Foodbliz Rider — Connect Restaurant</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="launcher-shell">
+    <section class="launcher-card" aria-labelledby="launcher-title">
+      <div class="brand-badge" aria-hidden="true">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="5.5" cy="17.5" r="3.5"></circle>
+          <circle cx="18.5" cy="17.5" r="3.5"></circle>
+          <path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 11.5V14l-3-3 4-3 2 3h2"></path>
+        </svg>
+      </div>
+
+      <p class="eyebrow">FOODBLIZ PARTNER</p>
+      <h1 id="launcher-title">Rider Portal</h1>
+      <p class="subtitle">Enter your restaurant code once to connect to live deliveries.</p>
+
+      <div id="saved-banner" class="saved-banner" hidden>
+        <div>
+          <span class="saved-label">Connected Restaurant</span>
+          <strong id="saved-restaurant-name"></strong>
+        </div>
+        <button type="button" id="btn-continue-saved" class="btn-secondary">Open</button>
+      </div>
+
+      <form id="restaurant-code-form" novalidate>
+        <label for="restaurant-code-input" class="input-label">Restaurant Code</label>
+        <input
+          id="restaurant-code-input"
+          name="code"
+          type="text"
+          inputmode="text"
+          autocomplete="off"
+          autocapitalize="characters"
+          spellcheck="false"
+          maxlength="24"
+          placeholder="e.g. SAVERA"
+          required
+        >
+        <p id="form-error" class="form-error" role="alert" hidden></p>
+
+        <button type="submit" id="btn-connect" class="btn-primary">
+          <span id="btn-connect-text">Continue to Rider Portal</span>
+        </button>
+      </form>
+
+      <div class="helper-footer">
+        <p>Ask your restaurant manager for your code if you don't have it.</p>
+        <button type="button" id="btn-reset-saved" class="btn-link" hidden>Clear saved restaurant</button>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
