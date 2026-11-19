@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#059669">
+  <meta name="theme-color" content="#FFFFFF">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <title>Foodbliz Rider — Connect Restaurant</title>
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -15,51 +15,69 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <main class="launcher-shell">
-    <section class="launcher-card" aria-labelledby="launcher-title">
-      <div class="brand-badge" aria-hidden="true">
-        <img src="/icon-192.png" alt="Foodbliz Rider Logo" width="80" height="80" class="brand-logo-img">
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="header-brand">
+        <img src="/icon-192.png" alt="FoodBliz Rider" class="header-logo" width="48" height="48">
+        <div class="brand-meta">
+          <span class="brand-name">FoodBliz</span>
+          <span class="brand-category">RIDER</span>
+        </div>
       </div>
+      <span class="partner-badge">PARTNER APP</span>
+    </header>
 
-      <p class="eyebrow">FOODBLIZ PARTNER</p>
-      <h1 id="launcher-title">Rider Portal</h1>
-      <p class="subtitle">Enter your restaurant code once to connect to live deliveries.</p>
-
+    <main class="app-content">
       <div id="saved-banner" class="saved-banner" hidden>
-        <div>
-          <span class="saved-label">Connected Restaurant</span>
+        <div class="saved-details">
+          <span class="saved-tag">Connected Restaurant</span>
           <strong id="saved-restaurant-name"></strong>
         </div>
         <button type="button" id="btn-continue-saved" class="btn-secondary">Open</button>
       </div>
 
-      <form id="restaurant-code-form" novalidate>
-        <label for="restaurant-code-input" class="input-label">Restaurant Code</label>
-        <input
-          id="restaurant-code-input"
-          name="code"
-          type="text"
-          inputmode="text"
-          autocomplete="off"
-          autocapitalize="characters"
-          spellcheck="false"
-          maxlength="24"
-          placeholder="ENTER CODE"
-          required
-        >
-        <p id="form-error" class="form-error" role="alert" hidden></p>
-
-        <button type="submit" id="btn-connect" class="btn-primary">
-          <span id="btn-connect-text">Continue to Rider Portal</span>
-        </button>
-      </form>
-
-      <div class="helper-footer">
-        <p>Ask your restaurant manager for your code if you don't have it.</p>
-        <button type="button" id="btn-reset-saved" class="btn-link" hidden>Clear saved restaurant</button>
+      <div class="content-header">
+        <h1 class="page-title">Sign in to your restaurant</h1>
+        <p class="page-subtitle">Enter the partner code from your restaurant manager to connect to live delivery dispatch.</p>
       </div>
-    </section>
-  </main>
+
+      <form id="restaurant-code-form" class="partner-form" novalidate>
+        <div class="form-group">
+          <label for="restaurant-code-input" class="input-label">Restaurant Partner Code</label>
+          <input
+            id="restaurant-code-input"
+            name="code"
+            type="text"
+            inputmode="text"
+            autocomplete="off"
+            autocapitalize="characters"
+            spellcheck="false"
+            maxlength="24"
+            placeholder="ENTER CODE"
+            required
+          >
+          <p id="form-error" class="form-error" role="alert" hidden></p>
+        </div>
+
+        <div class="info-note-box">
+          <svg class="info-note-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          <p class="info-note-text">You only need to enter this code once. Your device will stay connected to your restaurant automatically.</p>
+        </div>
+
+        <div class="bottom-action-area">
+          <button type="submit" id="btn-connect" class="btn-primary">
+            <span id="btn-connect-text">Continue</span>
+          </button>
+          <button type="button" id="btn-reset-saved" class="btn-link" hidden>Clear saved restaurant</button>
+          <footer class="footer-meta">FoodBliz Partner Network • v1.0</footer>
+        </div>
+      </form>
+    </main>
+  </div>
 
   <script type="module" src="/app.js"></script>
 </body>
